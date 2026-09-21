@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SMARTLAB - د ياسين أفقير | مختبر التحاليل الطبية</title>
+  <meta name="description" content="د ياسين أفقير - طبيب متخصص في التحاليل البيولوجية الطبية. مختبر SMARTLAB تمارة. هاتف: 0537 58 83 58 / 0628 50 16 95">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Kufi Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+    html, body {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-arabic {
+      font-family: 'Noto Kufi Arabic', -apple-system, sans-serif;
+    }
+    .teal-circle {
+      background-color: #1e8891;
+    }
+    .teal-circle:hover {
+      background-color: #176f77;
+    }
+    .teal-circle:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex justify-center items-center p-3 selection:bg-teal-600 selection:text-white relative">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 opacity-0 pointer-events-none transform -translate-y-4">
+    <div class="bg-slate-900 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 border border-slate-700">
+      <span class="text-teal-400">✓</span>
+      <span id="toast-text">Email copié dans le presse-papier !</span>
+    </div>
+  </div>
+
+  <!-- Compact Card: Zero gap, strictly hugs content -->
+  <div class="w-full max-w-sm bg-white sm:rounded-[32px] sm:shadow-xl sm:border sm:border-slate-100 px-5 pt-3 pb-4 flex flex-col">
+    
+    <!-- 1. Official Logo (IMAGE BASE64 DIRECTEMENT INTÉGRÉE) -->
+    <div class="pt-1 pb-2 flex justify-center items-center">
+      <img src="SmartLabLogo-Color-Horizntal.png" onerror="this.onerror=null; this.src='https://files.catbox.moe/lz7oaw.png';" alt="SMARTLAB" class="h-12 sm:h-14 w-auto object-contain max-h-14">
+    </div>
+
+    <!-- 2. Doctor Official Arabic Title -->
+    <div class="text-center mb-4 pb-2.5 border-b border-slate-100" dir="rtl">
+      <h1 class="font-arabic text-[21px] sm:text-[23px] font-black text-[#154956] tracking-tight leading-snug">
+        د ياسين أفقير
+      </h1>
+      <p class="font-arabic text-[11px] sm:text-[12px] font-bold text-slate-600 mt-0.5 leading-relaxed">
+        طبيب متخصص في التحاليل البيولوجية الطبية
+      </p>
+    </div>
+
+    <!-- 3. Action Items List with Teal Circles -->
+    <div class="space-y-3.5">
+
+      <!-- Phone Fixe -->
+      <a href="tel:+212537588358" class="flex items-center gap-4 group transition-transform active:scale-98">
+        <div class="w-12 h-12 rounded-full teal-circle flex items-center justify-center text-white shrink-0 shadow-md shadow-teal-900/10 transition-all duration-200 group-hover:scale-105">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
+        <div class="text-left">
+          <div class="text-base sm:text-lg font-bold text-black tracking-tight leading-none group-hover:text-[#1e8891] transition-colors">
+            0537 58 83 58
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium mt-1">
+            Standard Fixe du Laboratoire
+          </div>
+        </div>
+      </a>
+
+      <!-- WhatsApp & Mobile (Logo Agrandie w-7 h-7) -->
+      <a href="https://wa.me/212628501695?text=Bonjour%20Dr.%20Oufkir,%20je%20souhaite%20me%20renseigner%20sur%20vos%20analyses%20médicales%20au%20laboratoire%20Smartlab." target="_blank" class="flex items-center gap-4 group transition-transform active:scale-98">
+        <div class="w-12 h-12 rounded-full teal-circle flex items-center justify-center text-white shrink-0 shadow-md shadow-teal-900/10 transition-all duration-200 group-hover:scale-105">
+          <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.14l-.3-.18-3.12.82.83-3.04-.2-.32c-.82-1.3-1.26-2.82-1.26-4.38 0-4.54 3.7-8.24 8.25-8.24zm-3.51 3.66c-.16 0-.43.06-.65.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.75 2.66 4.23 3.73.59.26 1.05.41 1.41.53.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.67-1.19.2-.59.2-1.09.14-1.2-.06-.1-.22-.16-.46-.28s-1.41-.69-1.63-.77c-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.23-.12-1-.37-1.92-1.19-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.25-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42s-.52-1.26-.71-1.72c-.19-.44-.38-.38-.52-.39-.14-.01-.3-.01-.46-.01z"/>
+          </svg>
+        </div>
+        <div class="text-left">
+          <div class="text-base sm:text-lg font-bold text-black tracking-tight leading-none group-hover:text-[#1e8891] transition-colors">
+            0628 50 16 95
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium mt-1">
+            WhatsApp & Ligne Mobile
+          </div>
+        </div>
+      </a>
+
+      <!-- Email Direct -->
+      <div onclick="handleEmailClick(event)" class="cursor-pointer flex items-center gap-4 group transition-transform active:scale-98">
+        <div class="w-12 h-12 rounded-full teal-circle flex items-center justify-center text-white shrink-0 shadow-md shadow-teal-900/10 transition-all duration-200 group-hover:scale-105">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="text-left min-w-0 flex-1">
+          <div class="text-sm sm:text-base font-bold text-black tracking-tight leading-tight truncate group-hover:text-[#1e8891] transition-colors flex items-center gap-2">
+            <span>dr.oufkir@biosmartlab.ma</span>
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium mt-1 flex items-center gap-2">
+            <span>Courrier Électronique Officiel</span>
+            <span class="text-[10px] bg-slate-100 text-teal-700 px-1.5 py-0.2 rounded font-semibold">Cliquer pour écrire</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Site Web & Résultats -->
+      <a href="https://www.biosmartlab.ma" target="_blank" class="flex items-center gap-4 group transition-transform active:scale-98">
+        <div class="w-12 h-12 rounded-full teal-circle flex items-center justify-center text-white shrink-0 shadow-md shadow-teal-900/10 transition-all duration-200 group-hover:scale-105">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+          </svg>
+        </div>
+        <div class="text-left">
+          <div class="text-base sm:text-lg font-bold text-black tracking-tight leading-none group-hover:text-[#1e8891] transition-colors">
+            www.biosmartlab.ma
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium mt-1">
+            Portail Web & Résultats d'Analyses
+          </div>
+        </div>
+      </a>
+
+      <!-- Localisation Directe Google Maps -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Laboratoire+Bio+Smart+Lab+Temara+Avenue+Moulay+Idriss+I" target="_blank" class="flex items-center gap-4 group transition-transform active:scale-98">
+        <div class="w-12 h-12 rounded-full teal-circle flex items-center justify-center text-white shrink-0 shadow-md shadow-teal-900/10 transition-all duration-200 group-hover:scale-105">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M11.54 22.351A2.42 2.42 0 0110 20.672c-.8-1.57-2.07-3.418-3.42-5.328C4.697 12.72 3 9.99 3 7.5A8.5 8.5 0 0111.5 0 8.5 8.5 0 0120 7.5c0 2.49-1.697 5.22-3.58 7.844-1.35 1.91-2.62 3.758-3.42 5.328a2.42 2.42 0 01-1.46 1.679zM11.5 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="text-left">
+          <div class="text-sm sm:text-base font-bold text-black tracking-tight leading-tight group-hover:text-[#1e8891] transition-colors">
+            Avenue Moulay Idriss I, Témara
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium mt-1">
+            Résidence Moulay Idriss (Massira 1)
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- 4. Signature PLACÉE DIRECTEMENT SOUS LE DERNIER BOUTON (ZÉRO VIDE) -->
+    <div class="mt-4 pt-3 border-t border-slate-100 text-center" dir="rtl">
+      <div class="text-[11px] font-bold text-slate-600 font-arabic">
+        مختبر التحاليل الطبية والبيولوجية • تمارة
+      </div>
+      <div class="text-[10px] text-slate-400 mt-0.5 font-medium">
+        SMARTLAB • Biologie Médicale
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EMAIL MODAL OPTIONS -->
+  <div id="email-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 max-w-xs w-full text-center shadow-2xl border border-slate-100">
+      <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mx-auto mb-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <h3 class="text-base font-bold text-slate-900">Envoyer un Email</h3>
+      <p class="text-xs text-slate-500 mt-0.5 mb-4 select-all font-semibold">dr.oufkir@biosmartlab.ma</p>
+
+      <div class="space-y-2 text-xs font-bold">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dr.oufkir@biosmartlab.ma&su=Contact%20Laboratoire%20Smartlab" target="_blank" onclick="closeEmailModal()" class="w-full flex items-center justify-center gap-2 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl shadow-md transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          Ouvrir dans Gmail Web
+        </a>
+
+        <a href="mailto:dr.oufkir@biosmartlab.ma?subject=Contact%20Laboratoire%20Smartlab" onclick="closeEmailModal()" class="w-full flex items-center justify-center gap-2 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl shadow-md transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Application Mail Locale
+        </a>
+
+        <button onclick="copyAddressOnly()" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition">
+          📋 Copier l'adresse email
+        </button>
+      </div>
+
+      <button onclick="closeEmailModal()" class="mt-3 text-xs text-slate-400 hover:text-slate-600 font-semibold">
+        Fermer
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const TARGET_EMAIL = 'dr.oufkir@biosmartlab.ma';
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      text.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+      }, 2500);
+    }
+
+    function handleEmailClick(e) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(TARGET_EMAIL).then(() => {
+          showToast('✓ Email copié : ' + TARGET_EMAIL);
+        }).catch(() => {});
+      }
+
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = `mailto:${TARGET_EMAIL}?subject=Contact%20Laboratoire%20Smartlab`;
+      } else {
+        openEmailModal();
+      }
+    }
+
+    function openEmailModal() {
+      const modal = document.getElementById('email-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeEmailModal() {
+      const modal = document.getElementById('email-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    function copyAddressOnly() {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(TARGET_EMAIL);
+      }
+      showToast('✓ Adresse copiée dans le presse-papier !');
+      closeEmailModal();
+    }
+  </script>
+</body>
+</html>
